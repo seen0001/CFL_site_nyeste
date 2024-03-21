@@ -5,7 +5,7 @@ import Newsletter from "../components/Newsletter.astro";
 ---
 
 <article>
-  <img class="card-bg" src="/jelly_fish_2.webp" alt="event billede" />
+  <img class="card-bg" src="https://esterpiazza.dk/kea/08_ui-ux/jelly-fish.png" alt="event billede" />
   <div class="content">
     <h2>Stay Updated with our Events</h2>
     <p>Subscribe to receive updates on this program item or artist.</p>
@@ -19,14 +19,15 @@ import Newsletter from "../components/Newsletter.astro";
   article {
     margin-top: 80px;
   }
+
   .card-bg {
     width: 100%;
     object-fit: cover;
+    aspect-ratio: 300/200;
     filter: brightness(50%);
     grid-column: 1/5;
     grid-row: 1/4;
   }
-
   article {
     display: grid;
   }
@@ -39,6 +40,7 @@ import Newsletter from "../components/Newsletter.astro";
     align-items: center;
     margin-inline: auto;
   }
+
   h2 {
     text-align: center;
   }
@@ -48,23 +50,25 @@ import Newsletter from "../components/Newsletter.astro";
     margin-inline: auto;
     margin-top: 24px;
   }
-  /* .h3 {
-    margin-top: 80px;
-    grid-column: 2/4;
-    grid-row: 1/2;
-    z-index: 1;
-    text-align: center;
+
+  /* ___________________________ TABLET  ___________________________*/
+  /* reglerne gælder når skærmen er minimum 768px */
+  @media screen and (min-width: 768px) {
+    .card-bg {
+      aspect-ratio: 16/6;
+    }
   }
-  .p {
-    grid-column: 2/4;
-    grid-row: 2/3;
-    margin-top: 24px;
-    z-index: 1;
-    text-align: center;
+
+  /* ___________________________ DESKTOP  ___________________________*/
+  @media screen and (min-width: 1024px) {
+    .card-bg {
+      background-image: url(/jelly_fish_2.webp);
+      width: 100%;
+      object-fit: cover;
+      aspect-ratio: 16/5;
+      filter: brightness(50%);
+      grid-column: 1/5;
+      grid-row: 1/4;
+    }
   }
-  .newsletter {
-    grid-column: 2/4;
-    grid-row: 3/4;
-    z-index: 1;
-  } */
 </style>

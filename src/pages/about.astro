@@ -2,31 +2,169 @@
 import "../styles/style.css";
 import MainLayout from "../layouts/MainLayout.astro";
 import LokalMenu from "../components/LokalMenu.astro";
+import LokalMenupt2 from "../components/LokalMenupt2.astro";
+import Hero from "../components/Hero.astro";
 ---
 
 <MainLayout>
-  <div class="cards">
-    <LokalMenu navigation="/events" image="/events_menu.png" tagline="Events" header="Explore our Events" text="Immerse yourself in the captivating world of light art." />
-    <LokalMenu navigation="/installations" image="/installations_menu.webp" tagline="Installations" header="Explore our Installations" text="Uncover the enchanting world of light art and its creators." />
+  <div class="hero_div">
+    <Hero header1="Celebrating " header2=" Art" underheader1="Discover the magic of light art at the Copenhagen Light Festival." />
   </div>
+
+  <section class="discover_flex">
+    <div>
+      <h2>Transforming Winter Into <span class="light">Light </span> in Copenhagen.</h2>
+      <p>The Copenhagen Light Festival annually presents a diverse range of light-based works by designers, illuminating urban spaces and inviting audiences to explore the city during the darkest month of the year.</p>
+    </div>
+    <div class="fifty">
+      <div class="cph_image">
+        <img src="https://esterpiazza.dk/kea/08_ui-ux/about-billede.png" alt="Lys over København" />
+      </div>
+    </div>
+  </section>
+
+  <section class="discover_flex">
+    <div class="fifty">
+      <div>
+        <img src="https://esterpiazza.dk/kea/08_ui-ux/about-billede2.png" alt="Lys over København" />
+      </div>
+    </div>
+    <div class="fifty">
+      <hr class="hr_styling" />
+      <h2>Bringing <span class="light">Light</span>, Culture, and Community Together</h2>
+      <p>The Copenhagen Light Festival is a vibrant celebration of light art, showcasing the creativity of designers from around the world. Through captivating installations and illuminations, the festival transforms the city into a mesmerizing wonderland, attracting both locals and visitors alike.</p>
+    </div>
+  </section>
+  <section>
+    <LokalMenupt2 tagline="Highlights" h2del1="Explore the " h2del2="Program" teksten="Discover stunning light art installations and events." />
+    <div class="cards">
+      <LokalMenu navigation="/events" image="https://copenhagenlightfestival.org/wp-content/uploads/2024/02/74-Unorbit-1-scaled.jpg" tagline="Events" header="Explore our Events" text="Immerse yourself in the captivating world of light art." />
+      <LokalMenu navigation="/installations" image="https://copenhagenlightfestival.org/wp-content/uploads/2021/02/BIOLUMINESCENCE.jpg" tagline="Installations" header="Explore our Installations" text="Uncover the enchanting world of light art and its creators." />
+      <LokalMenu navigation="#" image="https://copenhagenlightfestival.org/wp-content/uploads/2024/02/09.-Lanterne-Tournante-1.jpg" tagline="Map" header="Choose your Route" text="Explore the magical routes at the Festval and choose your favorite one." />
+    </div>
+  </section>
+
+  <section class="discover_flex2">
+    <div class="fifty2">
+      <p class="tagline">Contact</p>
+      <div>
+        <h2>Get in Touch</h2>
+        <p>For press inquiries, potential sponsors, and partnership opportunities, please reach out to us.</p>
+      </div>
+    </div>
+    <div class="fifty">
+      <div class="contact_grid">
+        <div class="row">
+          <div class="content">
+            <img src="/icon_envelope.svg" alt="envelope icon" />
+            <div class="contact_info">
+              <h5>Email</h5>
+              <a class="mail" href="mailto:info@copenhagenlightfestival.org">info@copenhagenlightfestival.org</a>
+            </div>
+          </div>
+          <div class="content">
+            <img src="/icon_phone.svg" alt="phone icon" />
+            <div class="contact_info">
+              <h5>Phone</h5>
+              <a class="phone" href="tel:+4525556604">+45 25 55 66 04</a>
+            </div>
+          </div>
+          <div class="content">
+            <img src="/icon_map.svg" alt="map icon" />
+            <div class="contact_info">
+              <h5>Adress</h5>
+              <a class="adress" href="https://maps.app.goo.gl/gbwBRvixEDHALY1j7">Toldbodgade 39, 1253 København K</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </MainLayout>
 
 <style>
+  .hero_div {
+    margin-bottom: 80px;
+  }
+  .fifty {
+    width: 100%;
+    margin-inline: auto;
+    margin-top: 48px;
+  }
+  .discover_flex {
+    align-items: center;
+  }
+  .index-highlights {
+    display: flex;
+    justify-content: center;
+  }
+  .center_text {
+    text-align: center;
+  }
+
+  .to_links {
+    display: flex;
+  }
+
+  .index-hero-spacing {
+    margin-bottom: 250px;
+  }
+  .index-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .content img {
+    width: 26.67px;
+    height: 21.33px;
+    margin-bottom: 12px;
+  }
+  .content {
+    margin-bottom: 24px;
+  }
+  .contact_info a {
+    color: var(--text-color);
+    text-decoration: none;
+  }
+  .contact_info a:hover {
+    color: var(--action-color);
+  }
+  h5 {
+    margin-bottom: 8px;
+  }
+
   /* ___________________________ TABLET  ___________________________*/
   /* reglerne gælder når skærmen er minimum 768px */
   @media screen and (min-width: 768px) {
+    .fifty {
+      margin-inline: inherit;
+    }
     .cards {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      margin-top: 50px;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 32px;
     }
   }
 
   /* ___________________________ DESKTOP  ___________________________*/
   @media screen and (min-width: 1024px) {
     .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 32px;
+    }
+
+    .discover_flex {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 80px;
+    }
+    .fifty {
+      margin-inline: inherit;
+      align-content: center;
+      align-self: center;
     }
   }
 </style>
