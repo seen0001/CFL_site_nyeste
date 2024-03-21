@@ -1,0 +1,166 @@
+/*************** Reset *********************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-font: "Open Sans", sans-serif;
+  --body-font: "Work Sans", sans-serif;
+
+  --body-color: #000000;
+  --text-color: #ffffff;
+  --action-color: #fd6d27;
+  --gradient-color: linear-gradient(to bottom, #7a4fc1, #c059bd);
+  --button-hover: transparent;
+  --timer-box-color: #fd6d2775;
+}
+
+img,
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--body-color);
+  list-style: none;
+}
+
+main {
+  max-width: 1600px;
+  padding-inline: 20px;
+  margin-inline: auto;
+}
+
+/* TEKST START*/
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--primary-font);
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 44px;
+}
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 34px;
+}
+h3 {
+  font-size: 1.375rem;
+}
+h4 {
+  font-size: 1.3rem;
+}
+p {
+  font-size: 1rem;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+ul {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+p,
+a,
+ul {
+  font-family: var(--body-font);
+  font-weight: normal;
+}
+a {
+  cursor: pointer;
+  transition: all 0.55s ease;
+}
+a:hover {
+  color: var(--action-color);
+}
+
+.tagline {
+  font-size: 1rem;
+  color: #666666;
+  margin-bottom: 15px;
+}
+
+.hr_styling {
+  border: 0.1px solid grey;
+  width: 120px;
+  margin-bottom: 40px;
+}
+
+#center_hr {
+  margin-inline: auto;
+}
+
+.light {
+  color: transparent;
+  -webkit-text-stroke-width: 1.2px;
+  -webkit-text-stroke-color: var(--action-color);
+}
+
+.center-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.header-content_spacing {
+  margin-bottom: 20px;
+}
+
+main section:not(:first-child, :last-child) {
+  margin-bottom: 100px;
+}
+
+/* ___________________________ TABLET  ___________________________*/
+/* reglerne gælder når skærmen er minimum 768px */
+@media screen and (min-width: 768px) {
+  main {
+    padding-inline: 40px;
+  }
+}
+
+/* ___________________________ DESKTOP  ___________________________*/
+@media screen and (min-width: 1024px) {
+  main {
+    padding-inline: 80px;
+  }
+  h1 {
+    font-size: 4.6rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  h4 {
+    font-size: 1.3rem;
+  }
+  h5 {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 1.125rem;
+  }
+
+  main section:not(:first-child, :last-child) {
+    margin-bottom: 180px;
+  }
+}

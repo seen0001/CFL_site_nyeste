@@ -1,0 +1,33 @@
+---
+import "../styles/style.css";
+
+const { tagline, h2del1, h2del2, teksten } = Astro.props;
+---
+
+<article class="index-highlights">
+  <div class="center_text">
+    <hr id="center_hr" class="hr_styling" />
+    <p class="tagline">{tagline}</p>
+    <h2>{h2del1}<span class="light">Light</span> {h2del2}</h2>
+    <p>{teksten}</p>
+  </div>
+</article>
+
+<style>
+  .index-highlights {
+    display: flex;
+    justify-content: center;
+  }
+  .center_text {
+    text-align: center;
+  }
+  #center_hr {
+    margin-inline: auto;
+  }
+
+  .light {
+    color: transparent;
+    -webkit-text-stroke-width: 1.2px;
+    -webkit-text-stroke-color: var(--action-color);
+  }
+</style>

@@ -1,0 +1,121 @@
+---
+import "../styles/style.css";
+---
+
+<section>
+  <article class="gallery_header">
+    <h3>Image Gallery</h3>
+    <p>Capturing the Magic of the Light Festival Through Stunning Images</p>
+  </article>
+  <article id="gallery">
+    <img class="thumbnail" src="/clf-images/600/6-bricks-in-common.webp" alt="06.Bricks in common" />
+    <img class="thumbnail" src="/clf-images/600/21-taarnet-paa-christiansborg.webp" alt="21-taarnet-paa-christiansborg" />
+    <img class="thumbnail" src="/clf-images/600/28-ambient-asylum.webp" alt="28-ambient-asylum" />
+    <img class="thumbnail" src="/clf-images/600/50-mycelium-network.webp" alt="50-mycelium-network.webp" />
+    <img class="thumbnail" src="/clf-images/600/75-tunnelsyn.webp" alt="75-tunnelsyn" />
+    <img class="thumbnail" src="/clf-images/600/39-liquid-relations.webp" alt="39-liquid-relations" />
+    <img class="thumbnail" src="/clf-images/600/7-vivid-verve.webp" alt="7-vivid-verve.webp" />
+    <img class="thumbnail" src="/clf-images/600/13-hidden-nature.webp" alt="13-hidden-nature" />
+  </article>
+
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <div class="modal-content">
+      <img id="modal-img" src="" alt="Modal Image" />
+    </div>
+  </div>
+</section>
+<style>
+  .gallery_header {
+    text-align: center;
+  }
+  #gallery {
+    justify-content: center;
+    width: 100%;
+    margin: 100px auto 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+  .thumbnail {
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  .thumbnail:hover {
+    transform: scale(1.1);
+    border: solid white 1px;
+  }
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    align-self: center;
+    justify-content: center;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 500px;
+  }
+
+  .close {
+    color: var(--text-color);
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: var(--action-color);
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .modal-content img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    max-height: 80vh;
+    overflow: auto;
+  }
+</style>
+
+<script>
+  var modal = document.getElementById("myModal");
+  var modalImg = document.getElementById("modal-img");
+  var images = document.getElementsByClassName("thumbnail");
+  var span = document.getElementsByClassName("close")[0];
+
+  for (var i = 0; i < images.length; i++) {
+    images[i].onclick = function () {
+      modal.style.display = "flex";
+      modalImg.src = this.src;
+      document.body.style.overflow = "hidden";
+    };
+  }
+
+  span.onclick = function () {
+    modal.style.display = "none";
+    document.body.style.overflow = "auto";
+  };
+
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+  };
+</script>

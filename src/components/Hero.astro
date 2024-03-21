@@ -1,0 +1,19 @@
+---
+import "../styles/style.css";
+const { header1, header2, underheader1, underheader2 } = Astro.props;
+---
+
+<section class="center-hero">
+  <h1>{header1} <span class="light">Light</span> {header2}</h1>
+  <p class="underheader">{underheader1} <br /> {underheader2}</p>
+</section>
+
+<style>
+  .center-hero {
+    margin-top: 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+</style>

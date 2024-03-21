@@ -1,0 +1,234 @@
+---
+import "../styles/style.css";
+import MainLayout from "../layouts/MainLayout.astro";
+import Links from "../components/Links.astro";
+import Timer from "../components/Timer.astro";
+import Newsletter from "../components/Newsletter.astro";
+import LokalMenupt2 from "../components/LokalMenupt2.astro";
+import LokalMenu from "../components/LokalMenu.astro";
+
+const data = await fetch("https://sgtjiqlznfkfxjrnmbzs.supabase.co/rest/v1/CLF - team 19", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNndGppcWx6bmZrZnhqcm5tYnpzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0OTI4MTAsImV4cCI6MjAyNjA2ODgxMH0.3y04NP60alzSSL8lAd_mTtqqmiD4RNkQS0K1ILA3KBk",
+  },
+}).then((res) => res.json());
+
+console.log(data);
+---
+
+<div class="index-background">
+  <video autoplay muted loop src="https://esterpiazza.dk/kea/08_ui-ux/White_Beams%20from_Copenhagen%20City_Hall-02.mp4"></video>
+</div>
+
+<MainLayout>
+  <section class="index-hero-spacing">
+    <div class="flex-hero-items">
+      <div class="center-hero-top">
+        <p class="tagline">Discover the Magic</p>
+        <h1>Copenhagen <br /> <span class="light">Light</span> Festival</h1>
+        <div class="to_links">
+          <div class="link_et">
+            <Links variant="primary" Linket="#explore">Explore</Links>
+          </div>
+          <div class="link_to">
+            <Links variant="secondary" Linket="/contact">Contact<i class="fa-solid fa-chevron-right fa-0.5x"></i></Links>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="timer_right">
+      <div>
+        <Timer />
+      </div>
+    </div>
+  </section>
+
+  <section class="discover_flex" id="explore">
+    <div>
+      <hr class="hr_styling" />
+      <p class="tagline">Immerse yourself in a captivating display of light-based works by renowned <br />designers.</p>
+      <h2>Discover the Mesmerizing <br />World of <span class="light">Light Art</span></h2>
+      <ul>
+        <li>Immerse in luminous wonders at Copenhagen Light Festival.</li>
+        <li>Join international and local audiences in celebrating the magic of light.</li>
+        <li>Explore Copenhagen's radiance at the Light Festival.</li>
+      </ul>
+    </div>
+    <div class="fifty">
+      <div class="cph_image">
+        <img src="/cph_light_1.webp" alt="Lys over København" />
+      </div>
+    </div>
+  </section>
+  <section>
+    <LokalMenupt2 tagline="Highlights" h2del1="Explore the " h2del2="Program" teksten="Discover stunning light art installations and events." />
+    <div class="cards">
+      <LokalMenu navigation="/events" image="https://copenhagenlightfestival.org/wp-content/uploads/2024/02/74-Unorbit-1-scaled.jpg" tagline="Events" header="Explore our Events" text="Immerse yourself in the captivating world of light art." />
+      <LokalMenu navigation="/installations" image="https://copenhagenlightfestival.org/wp-content/uploads/2021/02/BIOLUMINESCENCE.jpg" tagline="Installations" header="Explore our Installations" text="Uncover the enchanting world of light art and its creators." />
+      <LokalMenu navigation="/map" image="https://copenhagenlightfestival.org/wp-content/uploads/2024/02/09.-Lanterne-Tournante-1.jpg" tagline="Map" header="Choose your Route" text="Explore the magical routes at the Festval and choose your favorite one." />
+    </div>
+  </section>
+  <section class="discover_flex">
+    <div class="fifty">
+      <div>
+        <video autoplay muted loop src="https://esterpiazza.dk/kea/08_ui-ux/Sequence_01_3.mp4"></video>
+      </div>
+    </div>
+    <div class="fifty">
+      <hr class="hr_styling" />
+      <h2>Get Early Access <span class="light">Information</span> Here</h2>
+      <Newsletter info_text="Sign up to receive exclusive updates and VIP experiences." />
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .fifty {
+    width: 100%;
+    margin-inline: auto;
+    margin-top: 48px;
+  }
+  .discover_flex {
+    text-align: center;
+    gap: 80px;
+  }
+
+  .index-highlights {
+    display: flex;
+    justify-content: center;
+  }
+  .center_text {
+    text-align: center;
+  }
+
+  .cph_image {
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 60%);
+  }
+
+  .flex-hero-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    margin-top: 80px;
+  }
+  .center-hero-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .to_links {
+    display: flex;
+  }
+  li {
+    padding-top: 8px;
+    margin-left: 15px;
+  }
+  i {
+    margin-left: 10px;
+  }
+
+  .index-hero-spacing {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 125px;
+    gap: 80px;
+  }
+  .index-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: brightness(25%);
+  }
+  .row {
+    margin: 48px 0;
+  }
+  .content img {
+    width: 26.67px;
+    height: 21.33px;
+    margin-bottom: 12px;
+  }
+  .content {
+    margin-bottom: 40px;
+  }
+  .contact_info a {
+    color: var(--text-color);
+    text-decoration: none;
+  }
+  .contact_info a:hover {
+    color: var(--action-color);
+  }
+  h5 {
+    margin-bottom: 8px;
+  }
+  iframe {
+    width: 100%;
+    height: 450px;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+
+  /* ___________________________ TABLET  ___________________________*/
+  /* reglerne gælder når skærmen er minimum 768px */
+  @media screen and (min-width: 768px) {
+    .fifty {
+      margin-inline: inherit;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 32px;
+    }
+  }
+
+  /* ___________________________ DESKTOP  ___________________________*/
+  @media screen and (min-width: 1024px) {
+    .flex-hero-items {
+      display: flex;
+      align-items: start;
+      gap: 125px;
+      margin-top: 125px;
+    }
+
+    .center-hero-top {
+      display: block;
+      text-align: start;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 32px;
+    }
+    .discover_flex {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      text-align: start;
+    }
+    .contact_grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+    }
+    .fifty {
+      margin-inline: inherit;
+      align-content: center;
+      align-self: center;
+    }
+    iframe {
+      width: 600px;
+      height: 450px;
+    }
+    h1 {
+      font-size: 4.6rem;
+    }
+
+    .index-hero-spacing {
+      margin-bottom: 250px;
+      gap: 100px;
+    }
+  }
+</style>

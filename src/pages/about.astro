@@ -1,0 +1,32 @@
+---
+import "../styles/style.css";
+import MainLayout from "../layouts/MainLayout.astro";
+import LokalMenu from "../components/LokalMenu.astro";
+---
+
+<MainLayout>
+  <div class="cards">
+    <LokalMenu navigation="/events" image="/events_menu.png" tagline="Events" header="Explore our Events" text="Immerse yourself in the captivating world of light art." />
+    <LokalMenu navigation="/installations" image="/installations_menu.webp" tagline="Installations" header="Explore our Installations" text="Uncover the enchanting world of light art and its creators." />
+  </div>
+</MainLayout>
+
+<style>
+  /* ___________________________ TABLET  ___________________________*/
+  /* reglerne gælder når skærmen er minimum 768px */
+  @media screen and (min-width: 768px) {
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 50px;
+    }
+  }
+
+  /* ___________________________ DESKTOP  ___________________________*/
+  @media screen and (min-width: 1024px) {
+    .cards {
+      gap: 80px;
+    }
+  }
+</style>

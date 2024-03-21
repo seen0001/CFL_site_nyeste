@@ -1,0 +1,45 @@
+---
+import "../styles/style.css";
+import MainLayout from "../layouts/MainLayout.astro";
+import Hero from "../components/Hero.astro";
+import InstallationCard from "../components/InstallationCard.astro";
+import GetInTouchCart from "../components/GetInTouchCart.astro";
+
+const data = await fetch("https://sgtjiqlznfkfxjrnmbzs.supabase.co/rest/v1/CLF%20-%20team%2019?Type=eq.Installation", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNndGppcWx6bmZrZnhqcm5tYnpzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0OTI4MTAsImV4cCI6MjAyNjA2ODgxMH0.3y04NP60alzSSL8lAd_mTtqqmiD4RNkQS0K1ILA3KBk",
+  },
+}).then((res) => res.json());
+---
+
+<MainLayout>
+  <Hero header1="Explore our " header2=" Installations" underheader1="Discover the captivating Light Installations and immerse yourself in the magic of Copenhagen Light Festival." />
+
+  <section class="installations_grid">
+    {
+      data.map((installation) => {
+        return <InstallationCard data={installation} />;
+      })
+    }
+  </section>
+  <hr class="hr_styling" id="center_hr" />
+  <GetInTouchCart />
+</MainLayout>
+
+<style>
+  .installations_grid {
+    margin-top: 64px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+
+  /* ___________________________ DESKTOP  ___________________________*/
+  @media screen and (min-width: 1024px) {
+    .installations_grid {
+      margin-top: 80px;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+  }
+</style>

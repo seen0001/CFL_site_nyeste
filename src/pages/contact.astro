@@ -1,0 +1,95 @@
+---
+import "../styles/style.css";
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout>
+  <section class="discover">
+    <div>
+      <hr class="hr_styling" />
+      <p class="tagline">Discover</p>
+      <h2>Contact us</h2>
+      <p>Explore the main festival locations across Copenhagen.</p>
+      <div class="contact_grid">
+        <div class="row">
+          <div class="content">
+            <img src="/icon_envelope.svg" alt="envelope icon" />
+            <div class="contact_info">
+              <h5>Email</h5>
+              <a class="mail" href="mailto:info@copenhagenlightfestival.org">info@copenhagenlightfestival.org</a>
+            </div>
+          </div>
+          <div class="content">
+            <img src="/icon_phone.svg" alt="phone icon" />
+            <div class="contact_info">
+              <h5>Phone</h5>
+              <a class="phone" href="tel:+4525556604">+45 25 55 66 04</a>
+            </div>
+          </div>
+          <div class="content">
+            <img src="/icon_map.svg" alt="map icon" />
+            <div class="contact_info">
+              <h5>Adress</h5>
+              <a class="adress" href="https://maps.app.goo.gl/gbwBRvixEDHALY1j7">Toldbodgade 39, 1253 København K</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="fifty">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2249.3686060118107!2d12.593556900000001!3d55.682579000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46525d389ca4df77%3A0x4f0c342ffcace904!2sCopenhagen%20Light%20Festival!5e0!3m2!1sda!2sdk!4v1710756146542!5m2!1sda!2sdk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .row {
+    margin: 48px 0;
+  }
+
+  .content img {
+    width: 26.67px;
+    height: 21.33px;
+    margin-bottom: 12px;
+  }
+  .content {
+    margin-bottom: 40px;
+  }
+  .contact_info a {
+    color: var(--text-color);
+    text-decoration: none;
+  }
+  .contact_info a:hover {
+    color: var(--action-color);
+  }
+  iframe {
+    width: 100%;
+    height: 450px;
+  }
+
+  /* ___________________________ TABLET  ___________________________*/
+  /* reglerne gælder når skærmen er minimum 768px */
+  @media screen and (min-width: 768px) {
+    .fifty {
+      margin-inline: inherit;
+    }
+  }
+
+  /* ___________________________ DESKTOP  ___________________________*/
+  @media screen and (min-width: 1024px) {
+    .contact_grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+    }
+    .fifty {
+      margin-inline: inherit;
+      align-content: center;
+    }
+    iframe {
+      width: 600px;
+      height: 450px;
+    }
+  }
+</style>

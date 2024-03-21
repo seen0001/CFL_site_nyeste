@@ -1,0 +1,171 @@
+---
+import Links from "../components/Links.astro";
+---
+
+<section>
+  <div class="getintouch_text">
+    <p class="tagline">Apply</p>
+    <h2>Get in Touch</h2>
+    <p>Fill out the form below to apply for future events</p>
+  </div>
+  <div class="contact_box">
+    <form name="contact" method="POST" data-netlify="true">
+      <label for="name">Name<input type="text" name="name" id="name" required /> </label>
+      <div>
+        <br />
+        <div>
+          <label for="email">E-mail <input type="email" name="email" id="email" required /> </label>
+        </div>
+        <br />
+        <label for="message">Message<textarea name="message" id="message" cols="30" rows="10"></textarea></label>
+        <label for="terms" class="terms"><input type="checkbox" name="termscond" id="terms" />I agree to the Terms </label>
+        <button class="send_buttondiv" type="submit">Submit</button>
+        <!-- <div class="send_buttondiv"><button class="send_button">Submit</button></div> -->
+      </div>
+    </form>
+  </div>
+</section>
+
+<style>
+  button {
+    display: inline-block;
+    font-size: 1rem;
+    padding: 12px 36px;
+    color: var(--text-color);
+    border-width: 0.8px;
+    border-style: solid;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.55s ease;
+    border-image: var(--gradient-color) 1;
+    background: var(--gradient-color);
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: var(--button-hover);
+    box-shadow: 0 0 20px var(--gradient-color);
+    cursor: pointer;
+  }
+  #name,
+  #email,
+  #message {
+    margin-top: 8px;
+    margin-bottom: 24px;
+  }
+  section {
+    display: block;
+  }
+  .getintouch_text {
+    text-align: center;
+    margin-inline: auto;
+  }
+  .getintouch_text p {
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  .tagline {
+    margin-bottom: 16px;
+    margin-inline: auto;
+  }
+
+  h2 {
+    margin-bottom: 24px;
+  }
+  .contact_textbox {
+    width: 600px;
+    margin-top: 12em;
+    padding: 0;
+    color: var(--text-color);
+  }
+
+  .contact_text {
+    width: 80%;
+    padding: 0;
+    position: relative;
+  }
+
+  .contact_box {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    max-width: 560px;
+    background: var(--body-color);
+    margin-inline: auto;
+    color: var(--text-color);
+    font-family: var(--body-font);
+  }
+  .send_buttondiv {
+    margin-inline: auto;
+  }
+
+  /* ___________________________ TABLET  ___________________________*/
+  /* reglerne gælder når skærmen er minimum 768px */
+  @media screen and (min-width: 768px) {
+    .contact_box {
+      width: 50%;
+    }
+  }
+
+  .contact_box form {
+    width: 100%;
+    padding: 0;
+  }
+
+  .contact_box label {
+    margin-bottom: 1.25rem;
+  }
+
+  input {
+    padding: 0.5rem;
+    width: 100%;
+  }
+
+  textarea {
+    height: 150px;
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .terms {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    font-size: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  #terms {
+    width: auto;
+  }
+
+  .send_buttondiv {
+    display: flex;
+    justify-content: center;
+  }
+  .send_button {
+    display: inline-block;
+    font-size: 0.8rem;
+    padding: 12px 36px;
+    color: var(--text-color);
+    border-width: 0.8px;
+    border-style: solid;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.55s ease;
+    font-family: var(--body-font);
+    border-image: var(--gradient-color) 1;
+    background: var(--gradient-color);
+  }
+
+  .send_button:hover {
+    background: var(--button-hover);
+    box-shadow: 0 0 20px var(--gradient-color);
+    transition: all 0.55s ease;
+  }
+  /* ___________________________ DESKTOP  ___________________________*/
+  @media screen and (min-width: 1024px) {
+  }
+</style>

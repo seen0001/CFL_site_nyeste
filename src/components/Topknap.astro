@@ -1,0 +1,49 @@
+---
+
+---
+
+<!-- <a href="#top">
+  <div class="knap"><p><span>←</span> Back to top</p></div>
+</a> -->
+<a href="#top" class="knap" id="backToTop">
+  <div><p><span>←</span> Back to top</p></div>
+</a>
+
+<style>
+  .knap {
+    transform: rotate(90deg);
+    position: fixed;
+    color: var(--text-color);
+    right: -40px;
+    letter-spacing: 3px;
+    display: none; /* Initially hide the button */
+    text-decoration: none;
+    z-index: 100;
+  }
+  .knap p {
+    font-size: 1rem;
+    transition: all 0.55s ease;
+  }
+  .knap p:hover {
+    color: var(--action-color);
+    transform: scale(1.1);
+  }
+</style>
+
+<script>
+  window.onscroll = function () {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    // Get the button
+    var mybutton = document.getElementById("backToTop");
+
+    // Show the button when user scrolls down 40px from the top of the document
+    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+</script>

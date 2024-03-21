@@ -1,0 +1,70 @@
+---
+import "../styles/style.css";
+
+import Newsletter from "../components/Newsletter.astro";
+---
+
+<article>
+  <img class="card-bg" src="/jelly_fish_2.webp" alt="event billede" />
+  <div class="content">
+    <h2>Stay Updated with our Events</h2>
+    <p>Subscribe to receive updates on this program item or artist.</p>
+    <div class="newsletter">
+      <Newsletter />
+    </div>
+  </div>
+</article>
+
+<style>
+  article {
+    margin-top: 80px;
+  }
+  .card-bg {
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(50%);
+    grid-column: 1/5;
+    grid-row: 1/4;
+  }
+
+  article {
+    display: grid;
+  }
+
+  .content {
+    grid-column: 2/4;
+    grid-row: 2/3;
+    z-index: 1;
+    text-align: center;
+    align-items: center;
+    margin-inline: auto;
+  }
+  h2 {
+    text-align: center;
+  }
+  .newsletter {
+    display: flex;
+    justify-content: center;
+    margin-inline: auto;
+    margin-top: 24px;
+  }
+  /* .h3 {
+    margin-top: 80px;
+    grid-column: 2/4;
+    grid-row: 1/2;
+    z-index: 1;
+    text-align: center;
+  }
+  .p {
+    grid-column: 2/4;
+    grid-row: 2/3;
+    margin-top: 24px;
+    z-index: 1;
+    text-align: center;
+  }
+  .newsletter {
+    grid-column: 2/4;
+    grid-row: 3/4;
+    z-index: 1;
+  } */
+</style>

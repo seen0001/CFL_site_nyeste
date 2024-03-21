@@ -1,0 +1,70 @@
+---
+import "../styles/style.css";
+import Links from "./Links.astro";
+const { navigation, image, tagline, header, text } = Astro.props;
+---
+
+<article>
+  <a href={navigation}>
+    <img src={image} alt="Events billede" />
+  </a>
+  <div class="indhold">
+    <p class="tagline">{tagline}</p>
+
+    <a href={navigation}>
+      <h4>{header}</h4>
+    </a>
+
+    <p>{text}</p>
+
+    <div class="card_bund">
+      <a href={navigation}>
+        Learn more <i class="fa-solid fa-chevron-right fa-0.5x" style="color: #ffffff;"></i>
+      </a>
+    </div>
+  </div>
+</article>
+<style>
+  article {
+    border: solid white 1px;
+    border-image: var(--gradient-color) 1;
+    margin-top: 48px;
+  }
+  article:hover {
+    border: solid white 1px;
+    transform: scale(1.01);
+  }
+
+  article img {
+    width: 100%;
+    aspect-ratio: 16/9;
+  }
+  .indhold {
+    padding: 24px;
+  }
+
+  .indhold h4,
+  .indhold p {
+    margin-bottom: 8px;
+  }
+  .card_bund a {
+    display: inline-block;
+    font-size: 1rem;
+    padding: 12px 0;
+    color: var(--text-color);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.55s ease;
+  }
+  .card_bund a:hover {
+    transform: scale(1.1);
+  }
+  a {
+    text-decoration: none;
+    transition: all 0.55s ease;
+  }
+  a h4:hover {
+    color: var(--action-color);
+    transition: all 0.55s ease;
+  }
+</style>

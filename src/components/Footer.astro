@@ -1,0 +1,226 @@
+---
+import "../styles/style.css";
+import Newsletter from "./Newsletter.astro";
+---
+
+<footer>
+  <hr class="hr_styling" />
+  <a class="logo_footer" href="/">
+    <img src="/cfl-logo.png" alt="Logo" />
+  </a>
+  <div class="content">
+    <div class="links">
+      <div class="kontakt">
+        <h5>Contact</h5>
+        <a class="mail" href="mailto:info@copenhagenlightfestival.org">Mail: <span> info@copenhagenlightfestival.org</span></a>
+        <a class="phone" href="tel:+4525556604">Phone: <span> +45 25 55 66 04</span></a>
+        <a class="adress" href="https://maps.app.goo.gl/gbwBRvixEDHALY1j7">Adress: <span> Toldbodgade 39, 1253 København K</span></a>
+      </div>
+
+      <div class="sociale_medier">
+        <h5>Follow us</h5>
+        <a class="facebook" href="https://www.facebook.com/cphlightfest/" target="_blank"> <img src="/Icon-facebook.svg" alt="Facebook icon" /> <span> Facebook</span></a>
+        <a class="instagram" href="https://www.instagram.com/cphlightfest/" target="_blank"> <img src="/Icon-instagram.svg" alt="Instagram icon" /> <span> Instagram</span></a>
+        <a class="youtube" href="https://www.youtube.com/@cphlightfest5395" target="_blank"> <img src="/Icon-youtube.svg" alt="Youtube icon" /> <span> Youtube</span></a>
+      </div>
+    </div>
+    <div class="newsletter">
+      <Newsletter info_text="Stay up to date on the latest features and releases by joining our newsletter." labelfor="termfooter" imputid="termfooter" />
+    </div>
+    <div class="credits">
+      <hr class="footer_line" />
+      <div class="policy">
+        <p>© COPENHAGEN LIGHT FESTIVAL. All rights reserved.</p>
+        <div class="footer_policy">
+          <p>Privacy Policy</p>
+          <p>Terms of Service</p>
+          <p>Cookies Settings</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    footer {
+      padding: 48px 20px 0 20px;
+    }
+    .logo_footer img {
+      width: 80px;
+      height: auto;
+    }
+    .content {
+      display: block;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    .links {
+      display: grid;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+    .kontakt,
+    .sociale_medier {
+      display: grid;
+      gap: 10px;
+    }
+
+    .mail,
+    .phone,
+    .adress,
+    .facebook,
+    .instagram,
+    .youtube {
+      display: flex;
+      align-items: center;
+    }
+
+    .kontakt p,
+    .sociale_medier p {
+      font-weight: bold;
+    }
+    h5 {
+      font-size: 1rem;
+    }
+
+    p,
+    a {
+      color: var(--text-color);
+      line-height: 1.5;
+      font-size: 0.85rem;
+      text-decoration: none;
+      list-style: none;
+    }
+    a:hover span {
+      color: var(--action-color);
+    }
+    span {
+      margin-left: 5px;
+    }
+    .sociale_medier img {
+      width: 30px;
+      height: auto;
+    }
+
+    .newsletter {
+      display: grid;
+      justify-items: start;
+    }
+    .newsletter .terms p {
+      font-size: 0.5rem;
+    }
+    label {
+      font-size: 0.7rem;
+      color: var(--text-color);
+      font-family: var(--body-font);
+    }
+    .credits {
+      margin-top: 32px;
+    }
+    .footer_line {
+      border-image: var(--gradient-color) 1;
+    }
+    .policy {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    .footer_policy {
+      display: flex;
+      justify-content: space-between;
+      gap: 24;
+    }
+
+    .credits p {
+      font-size: 0.5rem;
+    }
+
+    /* ___________________________ TABLET  ___________________________*/
+    /* reglerne gælder når skærmen er minimum 768px */
+    @media screen and (min-width: 768px) {
+      footer {
+        padding: 40px 40px 0 40px;
+      }
+
+      .content {
+        margin-bottom: 30px;
+      }
+      .links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+
+      .kontakt p,
+      .sociale_medier p {
+        font-weight: bold;
+      }
+
+      span {
+        margin-left: 10px;
+      }
+      .sociale_medier img {
+        width: 30px;
+        height: auto;
+      }
+
+      .newsletter {
+        margin-bottom: 32px;
+      }
+      .newsletter .terms p {
+        font-size: 0.5rem;
+      }
+      label {
+        font-size: 0.7rem;
+        color: var(--text-color);
+        font-family: var(--body-font);
+      }
+      .footer_line {
+        border-image: var(--gradient-color) 1;
+      }
+      .policy {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+      .footer_policy {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .credits p {
+        font-size: 0.7rem;
+      }
+    }
+
+    /* ___________________________ DESKTOP  ___________________________*/
+    @media screen and (min-width: 1024px) {
+      footer {
+        padding: 60px 60px 0 60px;
+      }
+
+      .content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 30px;
+      }
+
+      .newsletter {
+        display: grid;
+        justify-items: end;
+      }
+
+      .footer_policy {
+        gap: 24px;
+      }
+      .credits {
+        grid-column: 1/3;
+      }
+      .credits p {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</footer>

@@ -1,0 +1,75 @@
+---
+import "../styles/style.css";
+
+import MainLayout from "../layouts/MainLayout.astro";
+import Hero from "../components/Hero.astro";
+import LokalMenupt2 from "../components/LokalMenupt2.astro";
+import LokalMenu from "../components/LokalMenu.astro";
+import StayUpdated from "../components/StayUpdated.astro";
+import Galleri from "../components/Galleri.astro";
+---
+
+<MainLayout>
+  <Hero header1="Choose Your Route to Explore our Magical " header2=" Installations" underheader1="Experience the mesmerizing light installation that brings colors to life." />
+
+  <section>
+    <LokalMenupt2 tagline="Discover" h2del1="Explore our Events and " h2del2="Installations" teksten="Discover the most innovative and significant light installations from the program." />
+    <div class="cards">
+      <LokalMenu navigation="/events" image="/events_menu.png" tagline="Events" header="Explore our Events" text="Immerse yourself in the captivating world of light art." />
+      <LokalMenu navigation="/installations" image="/installations_menu.webp" tagline="Installations" header="Explore our Installations" text="Uncover the enchanting world of light art and its creators." />
+    </div>
+  </section>
+
+  <section>
+    <StayUpdated />
+  </section>
+
+  <Galleri />
+</MainLayout>
+
+<style>
+  .center-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .light {
+    color: transparent;
+    -webkit-text-stroke-width: 1.2px;
+    -webkit-text-stroke-color: var(--action-color);
+  }
+
+  .index-highlights {
+    display: flex;
+    justify-content: center;
+  }
+  .center_text {
+    text-align: center;
+  }
+  #center_hr {
+    margin-inline: auto;
+  }
+
+  .image {
+    height: 300px;
+  }
+
+  /* ___________________________ TABLET  ___________________________*/
+  /* reglerne gælder når skærmen er minimum 768px */
+  @media screen and (min-width: 768px) {
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 50px;
+    }
+  }
+
+  /* ___________________________ DESKTOP  ___________________________*/
+  @media screen and (min-width: 1024px) {
+    .cards {
+      gap: 80px;
+    }
+  }
+</style>

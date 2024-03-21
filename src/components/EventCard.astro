@@ -1,0 +1,83 @@
+---
+import "../styles/style.css";
+const { data, navigation } = Astro.props;
+console.log(data);
+---
+
+<article>
+  <a href="">
+    <div class="nr1">
+      <img class="card-bg" src={data.image} alt={data.name} />
+      <div class="content-overlay">
+        <h4>{data.name}</h4>
+        <p>{data.date}</p>
+      </div>
+      <div class="card_bund">
+        <a href={navigation}>
+          Learn more <i class="fa-solid fa-chevron-right fa-0.5x" style="color: #ffffff;"></i>
+        </a>
+      </div>
+    </div>
+  </a>
+</article>
+
+<style>
+  article {
+    border: solid white 1px;
+    border-image: var(--gradient-color) 1;
+  }
+
+  .nr1 {
+    position: relative;
+  }
+
+  .card-bg {
+    width: 100%;
+    aspect-ratio: 544/207;
+    object-fit: cover;
+    filter: brightness(50%);
+  }
+  .nr1 img:hover {
+    filter: none;
+    border: solid white 1px;
+    border-image: var(--gradient-color) 1;
+    transform: scale(1.03);
+  }
+
+  .content-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+  }
+
+  .card_bund a {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    display: inline-block;
+    font-size: 1rem;
+    padding: 12px 0;
+    color: var(--text-color);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.55s ease;
+  }
+  .card_bund a:hover {
+    transform: scale(1.1);
+  }
+  h4 {
+    font-size: 1.2rem;
+  }
+  /* ___________________________ DESKTOP  ___________________________*/
+  @media screen and (min-width: 1024px) {
+    h4 {
+      font-size: 1.8rem;
+    }
+  }
+</style>

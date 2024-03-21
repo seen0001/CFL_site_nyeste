@@ -1,0 +1,68 @@
+---
+import "../styles/style.css";
+const { variant, Linket } = Astro.props;
+---
+
+<a href={Linket} class={variant}><slot /></a>
+
+<style>
+  a {
+    display: inline-block;
+    font-size: 1rem;
+    padding: 12px 36px;
+    color: var(--text-color);
+    border-width: 0.8px;
+    border-style: solid;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.55s ease;
+  }
+
+  a:hover {
+    transform: scale(1.1);
+  }
+
+  .primary {
+    border-image: var(--gradient-color) 1;
+    background: var(--gradient-color);
+    cursor: pointer;
+  }
+  .primary:hover {
+    background: var(--button-hover);
+    box-shadow: 0 0 20px var(--gradient-color);
+    cursor: pointer;
+  }
+
+  .secondary {
+    background-color: transparent;
+    border: none;
+  }
+  .secondary:hover {
+    color: var(--action-color);
+  }
+  .tertiary {
+    border-image: var(--gradient-color) 1;
+    background: var(--button-hover);
+  }
+
+  .tertiary:hover {
+    border-image: var(--gradient-color) 1;
+    background: var(--gradient-color);
+  }
+
+  .learn-more {
+    background-color: transparent;
+    border: none;
+  }
+
+  .learn-more:hover {
+    text-decoration: underline;
+  }
+
+  /* ___________________________ DESKTOP  ___________________________*/
+  @media screen and (min-width: 1024px) {
+    a {
+      font-size: 1.2rem;
+    }
+  }
+</style>

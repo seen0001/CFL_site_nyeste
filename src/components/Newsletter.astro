@@ -1,0 +1,106 @@
+---
+import "../styles/style.css";
+import Links from "../components/Links.astro";
+const { info_text, labelfor, imputid } = Astro.props;
+---
+
+<!-- <a class={variant}><slot /></a> -->
+<div class="newsletter">
+  <form name="newsletter" method="POST" data-netlify="true">
+    <div class="info">
+      <p>
+        {info_text}
+      </p>
+    </div>
+    <div class="container">
+      <label for="email"><input class="subscribe_text" type="email" placeholder="Email" name="email" id="email" required /> </label>
+      <button class="subscribe_knap" type="submit">Subscribe</button>
+    </div>
+    <label for={labelfor} class="terms"><input class="terms" type="checkbox" name="termscond" id={imputid} />I agree to the Terms </label>
+  </form>
+</div>
+
+<style>
+  button {
+    display: inline-block;
+    font-size: 1rem;
+    padding: 12px 36px;
+    color: var(--text-color);
+    border-width: 0.8px;
+    border-style: solid;
+    text-decoration: none;
+    cursor: pointer;
+    border-image: var(--gradient-color) 1;
+    background: var(--gradient-color);
+    cursor: pointer;
+    transition: all 0.55s ease;
+  }
+
+  button:hover {
+    background: var(--button-hover);
+    box-shadow: 0 0 20px var(--gradient-color);
+    cursor: pointer;
+  }
+  .newsletter {
+    display: grid;
+    justify-items: start;
+    max-width: 500px;
+  }
+  .info p {
+    font-size: 1.1rem;
+  }
+  .container {
+    display: grid;
+    margin: 16px 0;
+    gap: 16px;
+  }
+  .subscribe_text {
+    font-size: 0.8rem;
+    padding: 12px 23px 12px 6px;
+    width: 460px;
+    max-width: 500px;
+  }
+  .subscribe_knap a {
+    font-size: 0.8rem;
+    width: 100%;
+    text-align: center;
+  }
+  .subscribe_knap a {
+    font-size: 0.8rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .terms {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.7rem;
+    cursor: pointer;
+    color: var(--text-color);
+    font-family: var(--body-font);
+  }
+
+  /* ___________________________ TABLET  ___________________________*/
+  /* reglerne gælder når skærmen er minimum 768px */
+  @media screen and (min-width: 768px) {
+    .container {
+      display: flex;
+      margin: 16px 0;
+      gap: 16px;
+    }
+    .subscribe_text {
+      font-size: 0.8rem;
+      padding: 12px 23px 12px 6px;
+      width: 320px;
+    }
+    .subscribe_knap a {
+      font-size: 0.8rem;
+      width: 100%;
+      text-align: left;
+    }
+  }
+
+  /* ___________________________ DESKTOP  ___________________________*/
+  @media screen and (min-width: 1024px) {
+  }
+</style>
